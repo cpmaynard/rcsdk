@@ -7,4 +7,19 @@
         data-is-secured="{is-secured}"
 		data-widget-id="{widget-id}"
 	></div>
-	<script src="{js-src}" defer="{defer}"></script>
+
+
+	<script src="{js-src}" defer="{defer}">
+        
+        let el = document.getElementById('widget1');
+                   if (el) {
+                     const subids = {
+                       "category": "sports"
+                     };
+                     
+                     
+                     
+                     
+                     el.setAttribute('data-sub-ids', JSON.stringify(subids));
+                   }
+        </script>
