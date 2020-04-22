@@ -15,16 +15,14 @@ class ViewController: UIViewController {
         
         RCSDK.setup(apiKey: "abc123")
         let widget = RCJSWidgetView.init(frame: CGRect.init(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height))
-        widget.setWidgetId(widgetId: "114858")
         let subIds = ["category":"entertainment"]
-       // widget.setWidgetId(widgetId: "114858")
         widget.setWidgetId(widgetId: "114858", widgetSubId: subIds)
-
         widget.loadWidget()
         self.view.addSubview(widget)
         
         // Do any additional setup after loading the view.
     }
+    
 
 
 }
