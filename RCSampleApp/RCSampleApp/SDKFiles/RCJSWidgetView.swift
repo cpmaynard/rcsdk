@@ -8,22 +8,37 @@
 
 import UIKit
 import WebKit
+import JavaScriptCore
+
+
+private let baseURL = "https://assets.revcontent.com/master"
+private let widgetHostKey = "{widget-host}"
+private let widgetHostVal = "habitat"
+private let endPointKey = "{endpoint}"
+private let endPointVal = "trends.revcontent.com"
+private let isSecuredKey = "{is-secured}"
+private let isSecuredVal = "true"
+private let jsSrcKey = "{js-src}"
+private let jsSrcVal = "https://assets.revcontent.com/master/delivery.js"
+private let deferKey = "{defer}"
+private let deferVal = "defer"
+private let widgetIdKey = "{widget-id}"
+private let widgetSubIdKey = "{sub-ids}"
+
 class RCJSWidgetView: WKWebView {
     private var htmlWidget:String?
-    private let baseURL = "https://assets.revcontent.com/master"
     private var widgetId:String?
-    private var widgetSubId:[String:Any]?
-    
+    private var widgetSubId:[String:String]?
     override init(frame: CGRect, configuration: WKWebViewConfiguration) {
         super.init(frame: frame, configuration: configuration)
         self.loadHTMLContent()
     }
-   
     private func loadHTMLContent(){
         let htmlPath = Bundle.main.path(forResource: "widget", ofType: "html")
         do {
             self.htmlWidget = try String.init(contentsOfFile: htmlPath!, encoding: .utf8)
         } catch {
+            print(error)
             self.htmlWidget = nil
         }
     }
@@ -33,10 +48,12 @@ class RCJSWidgetView: WKWebView {
     }
     
     func setWidgetId(widgetId:String){
-        self.backgroundColor = .red
         self.widgetId = widgetId
     }
-    func setWidgetId(widgetId:String, widgetSubId:[String:Any]){
+    func setWidgetSubId(widgetSubId:[String:String]){
+        self.widgetSubId = widgetSubId
+    }
+    func setWidgetId(widgetId:String, widgetSubId:[String:String]){
         self.widgetId = widgetId
         self.widgetSubId = widgetSubId
     }
@@ -56,12 +73,17 @@ class RCJSWidgetView: WKWebView {
     }
     
     private func generateWidgetHTML()->String{
-        var result = self.htmlWidget!.replacingOccurrences(of: "{widget-host}", with: "habitat")
-        result = result.replacingOccurrences(of: "{endpoint}", with: "trends.revcontent.com")
-        result = result.replacingOccurrences(of: "{is-secured}", with: "true")
-        result = result.replacingOccurrences(of: "{widget-id}", with: self.widgetId!)
-        result = result.replacingOccurrences(of: "{js-src}", with: "https://assets.revcontent.com/master/delivery.js")
-        result = result.replacingOccurrences(of: "{defer}", with: "defer")
+        var result = self.htmlWidget!.replacingOccurrences(of: widgetHostKey, with: widgetHostVal)
+        result = result.replacingOccurrences(of: endPointKey, with: endPointVal)
+        result = result.replacingOccurrences(of: isSecuredKey, with: isSecuredVal)
+        result = result.replacingOccurrences(of: widgetIdKey, with: self.widgetId!)
+        result = result.replacingOccurrences(of: jsSrcKey, with: jsSrcVal)
+        result = result.replacingOccurrences(of: deferKey, with: deferVal)
+        if(self.widgetSubId != nil){
+            let jsonData = try? JSONSerialization.data(withJSONObject: self.widgetSubId!, options: [])
+            let jsonString = String(data: jsonData!, encoding: .utf8)
+            result = result.replacingOccurrences(of: widgetSubIdKey, with: jsonString!)
+        }
         return result
     }
 }
