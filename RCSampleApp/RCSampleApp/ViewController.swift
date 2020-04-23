@@ -12,18 +12,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         RCSDK.setup(apiKey: "abc123")
         let widget = RCJSWidgetView.init(frame: CGRect.init(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height))
         let subIds = ["category":"BBQ"]
         widget.setWidgetId(widgetId: "66620", widgetSubId: subIds)
         widget.loadWidget()
         self.view.addSubview(widget)
-        
-        // Do any additional setup after loading the view.
     }
-    
-
-
 }
 

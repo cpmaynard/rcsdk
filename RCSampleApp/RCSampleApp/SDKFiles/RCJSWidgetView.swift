@@ -25,12 +25,14 @@ private let deferVal = "defer"
 private let widgetIdKey = "{widget-id}"
 private let widgetSubIdKey = "{sub-ids}"
 
+
 class RCJSWidgetView: WKWebView {
     private var htmlWidget:String?
     private var widgetId:String?
     private var widgetSubId:[String:String]?
     override init(frame: CGRect, configuration: WKWebViewConfiguration) {
         super.init(frame: frame, configuration: configuration)
+        self.navigationDelegate = self
         self.loadHTMLContent()
     }
     private func loadHTMLContent(){
@@ -86,4 +88,25 @@ class RCJSWidgetView: WKWebView {
         }
         return result
     }
+}
+
+extension RCJSWidgetView: WKNavigationDelegate{
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+           if navigationAction.navigationType == .linkActivated {
+               guard let url = navigationAction.request.url else {
+                   decisionHandler(.allow)
+                   return
+               }
+               let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+               if components?.scheme == "http" || components?.scheme == "https"
+               {
+                   UIApplication.shared.open(url)
+                   decisionHandler(.cancel)
+               } else {
+                   decisionHandler(.allow)
+               }
+           } else {
+               decisionHandler(.allow)
+           }
+       }
 }
