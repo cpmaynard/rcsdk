@@ -1,15 +1,16 @@
 //
 //  AppDelegate.swift
-//  RCSampleApp
+//  RCSDKExamples
 //
-//  Created by Apple on 22/04/20.
-//  Copyright © 2020 Team. All rights reserved.
+//  Created by Apple on 24/04/20.
+//  Copyright © 2020 Revcontent. All rights reserved.
 //
 
 import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+
 
     var window: UIWindow?
 
@@ -18,7 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
-  
 
 }
 

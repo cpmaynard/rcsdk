@@ -8,13 +8,13 @@
 
 import UIKit
 
-class RCSDK: NSObject {
+public final class RCSDK: NSObject {
     private static var instance: RCSDK!
     private var initiliazed = false
 
     private override init() {
     }
-    class func setup(apiKey: String){
+    public class func setup(apiKey: String){
         if (instance == nil){
             instance = RCSDK()
         }
