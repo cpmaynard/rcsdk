@@ -19,17 +19,16 @@ public final class RCSDK: NSObject {
             instance = RCSDK()
         }
     }
-    private class func validSDK()->Bool{
+    private class func validateSDK()->Bool{
         if(instance != nil){
             return true
         }else{
-            NSLog("RCSDK: SDK is not intialized.")
             return false
         }
     }
     public class func initiliazed()->Bool{
-        if(validSDK()){
-           return true
+        if(validateSDK()){
+            return true
         }else{
             return false
         }

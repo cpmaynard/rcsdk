@@ -18,6 +18,7 @@ class ViewController: UIViewController {
            let subIds = ["category":"BBQ","utm_code":"123456"]
            self.widget!.setWidgetId(widgetId: "66620")
            self.widget!.setWidgetSubId(widgetSubId:subIds)
+           self.widget!.setSiteUrl(siteUrl: "http://rcsampleapp.com/")
            self.widget!.loadWidget()
            self.view.addSubview(self.widget!)
        }

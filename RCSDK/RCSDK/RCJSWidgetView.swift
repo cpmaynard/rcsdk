@@ -22,12 +22,14 @@ private let deferKey = "{defer}"
 private let deferVal = "defer"
 private let widgetIdKey = "{widget-id}"
 private let widgetSubIdKey = "{sub-ids}"
+private let sourceUrlKey = "{source-url}"
 private let widgetFileName = "widget"
 private let widgetFileExt = "html"
 
 public class RCJSWidgetView: WKWebView {
     private var htmlWidget:String?
     private var widgetId:String?
+    private var siteUrl:String?
     private var widgetSubId:[String:String]?
     override init(frame: CGRect, configuration: WKWebViewConfiguration) {
         super.init(frame: frame, configuration: configuration)
@@ -50,6 +52,9 @@ public class RCJSWidgetView: WKWebView {
     public func setWidgetId(widgetId:String){
         self.widgetId = widgetId
     }
+    public func setSiteUrl(siteUrl:String){
+           self.siteUrl = siteUrl
+    }
     public func setWidgetSubId(widgetSubId:[String:String]){
         self.widgetSubId = widgetSubId
     }
@@ -58,25 +63,36 @@ public class RCJSWidgetView: WKWebView {
         self.widgetSubId = widgetSubId
     }
     public func loadWidget(){
-        if(RCSDK.initiliazed()){
-            if (self.htmlWidget != nil){
-                if (self.widgetId != nil){
-                    let html = self.generateWidgetHTML();
-                    self.loadHTMLString(html, baseURL: URL.init(string: baseURL))
-                }else{
-                    NSLog("RCSDK -> RCJSWidgetView: WidgetId is required.")
-                }
-            }else{
-                NSLog("RCSDK -> RCJSWidgetView: Widget not loaded.")
-            }
+        let message = validateWidget()
+        if (message == nil){
+            let html = self.generateWidgetHTML();
+            self.loadHTMLString(html, baseURL: URL.init(string: baseURL))
+        }else{
+            NSLog(message!)
         }
     }
     
+    private func validateWidget()->String?{
+        if(!RCSDK.initiliazed()){
+            return "RCSDK -> SDK not initialzied."
+        }
+        if(self.htmlWidget == nil){
+            return "RCSDK -> RCJSWidgetView: Widget not loaded."
+        }
+        if(self.widgetId == nil){
+            return "RCSDK -> RCJSWidgetView: WidgetId is required."
+        }
+        if(self.siteUrl == nil){
+            return "RCSDK -> RCJSWidgetView: SiteUrl is required."
+        }
+        return nil
+    }
     private func generateWidgetHTML()->String{
         var result = self.htmlWidget!.replacingOccurrences(of: widgetHostKey, with: widgetHostVal)
         result = result.replacingOccurrences(of: endPointKey, with: endPointVal)
         result = result.replacingOccurrences(of: isSecuredKey, with: isSecuredVal)
         result = result.replacingOccurrences(of: widgetIdKey, with: self.widgetId!)
+        result = result.replacingOccurrences(of: sourceUrlKey, with: self.siteUrl!)
         result = result.replacingOccurrences(of: jsSrcKey, with: jsSrcVal)
         result = result.replacingOccurrences(of: deferKey, with: deferVal)
         if(self.widgetSubId != nil){
