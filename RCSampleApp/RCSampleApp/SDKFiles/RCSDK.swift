@@ -11,28 +11,24 @@ import UIKit
 class RCSDK: NSObject {
     private static var instance: RCSDK!
     private var initiliazed = false
-    private var apiKey: String?
 
     private override init() {
     }
-    private init(apiKey:String) {
-        self.apiKey = apiKey
-    }
     class func setup(apiKey: String){
         if (instance == nil){
-            instance = RCSDK(apiKey: apiKey)
+            instance = RCSDK()
         }
     }
-    private class func validAPIKey()->Bool{
-        if(instance != nil && instance.apiKey != nil && instance.apiKey == "abc123"){
+    private class func validSDK()->Bool{
+        if(instance != nil){
             return true
         }else{
-            NSLog("RCSDK: SDK is not intialized with valid APIKey.")
+            NSLog("RCSDK: SDK is not intialized.")
             return false
         }
     }
     public class func initiliazed()->Bool{
-        if(validAPIKey()){
+        if(validSDK()){
            return true
         }else{
             return false

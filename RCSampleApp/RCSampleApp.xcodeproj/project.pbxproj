@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		188C3C372452CD4E0050BADD /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 188C3C362452CD4E0050BADD /* test.jpg */; };
 		18DA1DC2245010D800DF2B3B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA1DC1245010D800DF2B3B /* AppDelegate.swift */; };
 		18DA1DC6245010D800DF2B3B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18DA1DC5245010D800DF2B3B /* ViewController.swift */; };
 		18DA1DC9245010D800DF2B3B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18DA1DC7245010D800DF2B3B /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		188C3C362452CD4E0050BADD /* test.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = test.jpg; sourceTree = "<group>"; };
 		18DA1DBE245010D800DF2B3B /* RCSampleApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCSampleApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18DA1DC1245010D800DF2B3B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		18DA1DC5245010D800DF2B3B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				18DA1DD5245010FE00DF2B3B /* SDKFiles */,
 				18DA1DC1245010D800DF2B3B /* AppDelegate.swift */,
 				18DA1DC5245010D800DF2B3B /* ViewController.swift */,
+				188C3C362452CD4E0050BADD /* test.jpg */,
 				18DA1DC7245010D800DF2B3B /* Main.storyboard */,
 				18DA1DCA245010DA00DF2B3B /* Assets.xcassets */,
 				18DA1DCC245010DA00DF2B3B /* LaunchScreen.storyboard */,
@@ -140,6 +143,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				18DA1DCE245010DA00DF2B3B /* LaunchScreen.storyboard in Resources */,
+				188C3C372452CD4E0050BADD /* test.jpg in Resources */,
 				18DA1DCB245010DA00DF2B3B /* Assets.xcassets in Resources */,
 				18DA1DDB245011A500DF2B3B /* widget.html in Resources */,
 				18DA1DC9245010D800DF2B3B /* Main.storyboard in Resources */,
@@ -300,16 +304,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N6NT2W6V6Y;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9WB9QL8269;
 				INFOPLIST_FILE = RCSampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Team.RCSampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.space-rn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = SpaceDevProfile_16042020;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -319,16 +325,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = N6NT2W6V6Y;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 9WB9QL8269;
 				INFOPLIST_FILE = RCSampleApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = Team.RCSampleApp;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.space-rn";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = SpaceDevProfile_16042020;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

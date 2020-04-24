@@ -11,7 +11,7 @@ import WebKit
 import JavaScriptCore
 
 
-private let baseURL = "https://assets.revcontent.com/master"
+private let baseURL = "https://performance.revcontent.dev"
 private let widgetHostKey = "{widget-host}"
 private let widgetHostVal = "habitat"
 private let endPointKey = "{endpoint}"
@@ -24,6 +24,7 @@ private let deferKey = "{defer}"
 private let deferVal = "defer"
 private let widgetIdKey = "{widget-id}"
 private let widgetSubIdKey = "{sub-ids}"
+
 
 
 class RCJSWidgetView: WKWebView {
@@ -45,10 +46,8 @@ class RCJSWidgetView: WKWebView {
         }
     }
     required init?(coder: NSCoder) {
-        
         fatalError("init(coder:) has not been implemented")
     }
-    
     func setWidgetId(widgetId:String){
         self.widgetId = widgetId
     }
@@ -84,7 +83,10 @@ class RCJSWidgetView: WKWebView {
         if(self.widgetSubId != nil){
             let jsonData = try? JSONSerialization.data(withJSONObject: self.widgetSubId!, options: [])
             let jsonString = String(data: jsonData!, encoding: .utf8)
-            result = result.replacingOccurrences(of: widgetSubIdKey, with: jsonString!)
+            let replacedJsonString = jsonString!.replacingOccurrences(of: "\"", with: "&quot;")
+            result = result.replacingOccurrences(of: widgetSubIdKey, with: replacedJsonString)
+        }else{
+            result = result.replacingOccurrences(of: widgetSubIdKey, with: "")
         }
         return result
     }
@@ -98,6 +100,7 @@ extension RCJSWidgetView: WKNavigationDelegate{
                    return
                }
                let components = URLComponents(url: url, resolvingAgainstBaseURL: false)
+                print (url);
                if components?.scheme == "http" || components?.scheme == "https"
                {
                    UIApplication.shared.open(url)
@@ -105,8 +108,11 @@ extension RCJSWidgetView: WKNavigationDelegate{
                } else {
                    decisionHandler(.allow)
                }
-           } else {
+           } else if navigationAction.navigationType == .other{
+            print (navigationAction.request.url as Any)
                decisionHandler(.allow)
-           }
+           }else{
+               decisionHandler(.allow)
+            }
        }
 }
