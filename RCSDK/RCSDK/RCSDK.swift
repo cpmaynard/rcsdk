@@ -14,7 +14,7 @@ public final class RCSDK: NSObject {
 
     private override init() {
     }
-    public class func setup(apiKey: String){
+    public class func setup(){
         if (instance == nil){
             instance = RCSDK()
         }
