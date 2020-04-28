@@ -52,7 +52,7 @@ public class RCJSWidgetView: WKWebView {
     public func setWidgetId(widgetId:String){
         self.widgetId = widgetId
     }
-    public func setSiteUrl(siteUrl:String){
+    private func setSiteUrl(siteUrl:String){
            self.siteUrl = siteUrl
     }
     public func setWidgetSubId(widgetSubId:[String:String]){
