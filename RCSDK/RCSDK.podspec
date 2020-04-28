@@ -1,7 +1,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "RCSDK"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.3"
   spec.summary      = "A CocoaPods library for Revcontent written in Swift."
   spec.description  = <<-DESC
                    This cocoapods library enables you to receive the same ad fill you would see in our traditional ad placements in a more flexible format
