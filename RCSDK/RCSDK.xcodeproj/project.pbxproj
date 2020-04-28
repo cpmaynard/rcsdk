@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		188C3CFA245332C00050BADD /* RCSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 188C3CF0245332C00050BADD /* RCSDK.framework */; };
-		188C3CFF245332C00050BADD /* RCSDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C3CFE245332C00050BADD /* RCSDKTests.swift */; };
 		188C3D01245332C00050BADD /* RCSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 188C3CF3245332C00050BADD /* RCSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		188C3D11245332D60050BADD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C3D10245332D60050BADD /* AppDelegate.swift */; };
 		188C3D15245332D60050BADD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 188C3D14245332D60050BADD /* ViewController.swift */; };
@@ -21,23 +19,10 @@
 		188C3D3F245350DC0050BADD /* test.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 188C3D3E245350DC0050BADD /* test.jpg */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		188C3CFB245332C00050BADD /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 188C3CE7245332C00050BADD /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 188C3CEF245332C00050BADD;
-			remoteInfo = RCSDK;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
 		188C3CF0245332C00050BADD /* RCSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RCSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		188C3CF3245332C00050BADD /* RCSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCSDK.h; sourceTree = "<group>"; };
 		188C3CF4245332C00050BADD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		188C3CF9245332C00050BADD /* RCSDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RCSDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		188C3CFE245332C00050BADD /* RCSDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RCSDKTests.swift; sourceTree = "<group>"; };
-		188C3D00245332C00050BADD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		188C3D0E245332D60050BADD /* RCSDKExamples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RCSDKExamples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		188C3D10245332D60050BADD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		188C3D14245332D60050BADD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,14 +44,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		188C3CF6245332C00050BADD /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				188C3CFA245332C00050BADD /* RCSDK.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		188C3D0B245332D60050BADD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -81,7 +58,6 @@
 			isa = PBXGroup;
 			children = (
 				188C3CF2245332C00050BADD /* RCSDK */,
-				188C3CFD245332C00050BADD /* RCSDKTests */,
 				188C3D0F245332D60050BADD /* RCSDKExamples */,
 				188C3CF1245332C00050BADD /* Products */,
 			);
@@ -91,7 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				188C3CF0245332C00050BADD /* RCSDK.framework */,
-				188C3CF9245332C00050BADD /* RCSDKTests.xctest */,
 				188C3D0E245332D60050BADD /* RCSDKExamples.app */,
 			);
 			name = Products;
@@ -107,15 +82,6 @@
 				188C3CF4245332C00050BADD /* Info.plist */,
 			);
 			path = RCSDK;
-			sourceTree = "<group>";
-		};
-		188C3CFD245332C00050BADD /* RCSDKTests */ = {
-			isa = PBXGroup;
-			children = (
-				188C3CFE245332C00050BADD /* RCSDKTests.swift */,
-				188C3D00245332C00050BADD /* Info.plist */,
-			);
-			path = RCSDKTests;
 			sourceTree = "<group>";
 		};
 		188C3D0F245332D60050BADD /* RCSDKExamples */ = {
@@ -164,24 +130,6 @@
 			productReference = 188C3CF0245332C00050BADD /* RCSDK.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		188C3CF8245332C00050BADD /* RCSDKTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 188C3D07245332C00050BADD /* Build configuration list for PBXNativeTarget "RCSDKTests" */;
-			buildPhases = (
-				188C3CF5245332C00050BADD /* Sources */,
-				188C3CF6245332C00050BADD /* Frameworks */,
-				188C3CF7245332C00050BADD /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				188C3CFC245332C00050BADD /* PBXTargetDependency */,
-			);
-			name = RCSDKTests;
-			productName = RCSDKTests;
-			productReference = 188C3CF9245332C00050BADD /* RCSDKTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		188C3D0D245332D60050BADD /* RCSDKExamples */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 188C3D1F245332D80050BADD /* Build configuration list for PBXNativeTarget "RCSDKExamples" */;
@@ -213,9 +161,6 @@
 						CreatedOnToolsVersion = 11.4;
 						LastSwiftMigration = 1140;
 					};
-					188C3CF8245332C00050BADD = {
-						CreatedOnToolsVersion = 11.4;
-					};
 					188C3D0D245332D60050BADD = {
 						CreatedOnToolsVersion = 11.4;
 					};
@@ -235,7 +180,6 @@
 			projectRoot = "";
 			targets = (
 				188C3CEF245332C00050BADD /* RCSDK */,
-				188C3CF8245332C00050BADD /* RCSDKTests */,
 				188C3D0D245332D60050BADD /* RCSDKExamples */,
 			);
 		};
@@ -247,13 +191,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				188C3D3D245350AE0050BADD /* widget.html in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		188C3CF7245332C00050BADD /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,14 +217,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		188C3CF5245332C00050BADD /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				188C3CFF245332C00050BADD /* RCSDKTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		188C3D0A245332D60050BADD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -298,14 +227,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		188C3CFC245332C00050BADD /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 188C3CEF245332C00050BADD /* RCSDK */;
-			targetProxy = 188C3CFB245332C00050BADD /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		188C3D16245332D60050BADD /* Main.storyboard */ = {
@@ -498,42 +419,6 @@
 			};
 			name = Release;
 		};
-		188C3D08245332C00050BADD /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RCSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = RC.RCSDKTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		188C3D09245332C00050BADD /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = RCSDKTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = RC.RCSDKTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		188C3D20245332D80050BADD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -585,15 +470,6 @@
 			buildConfigurations = (
 				188C3D05245332C00050BADD /* Debug */,
 				188C3D06245332C00050BADD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		188C3D07245332C00050BADD /* Build configuration list for PBXNativeTarget "RCSDKTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				188C3D08245332C00050BADD /* Debug */,
-				188C3D09245332C00050BADD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
