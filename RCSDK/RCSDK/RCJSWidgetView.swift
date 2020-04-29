@@ -82,9 +82,9 @@ public class RCJSWidgetView: WKWebView {
         if(self.widgetId == nil){
             return "RCSDK -> RCJSWidgetView: WidgetId is required."
         }
-        if(self.siteUrl == nil){
-            return "RCSDK -> RCJSWidgetView: SiteUrl is required."
-        }
+//        if(self.siteUrl == nil){
+//            return "RCSDK -> RCJSWidgetView: SiteUrl is required."
+//        }
         return nil
     }
     private func generateWidgetHTML()->String{
@@ -92,7 +92,7 @@ public class RCJSWidgetView: WKWebView {
         result = result.replacingOccurrences(of: endPointKey, with: endPointVal)
         result = result.replacingOccurrences(of: isSecuredKey, with: isSecuredVal)
         result = result.replacingOccurrences(of: widgetIdKey, with: self.widgetId!)
-        result = result.replacingOccurrences(of: sourceUrlKey, with: self.siteUrl!)
+     //   result = result.replacingOccurrences(of: sourceUrlKey, with: self.siteUrl!)
         result = result.replacingOccurrences(of: jsSrcKey, with: jsSrcVal)
         result = result.replacingOccurrences(of: deferKey, with: deferVal)
         if(self.widgetSubId != nil){

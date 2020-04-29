@@ -7,14 +7,19 @@
 //
 
 import UIKit
-
+import RCSDK
 class ViewController: UIViewController {
-
-       override func viewDidLoad() {
         
+       override func viewDidLoad() {
+            RCSDK.setup()
+            let widget = RCJSWidgetView.init(frame: self.view.frame)
+            widget.setWidgetId(widgetId: "66620")
+            widget.setWidgetSubId(widgetSubId:["category":"entertainment", "utm_code":"123456"]);  // It is Optional
+         //   widget.setWidgetSubId(widgetId:"66620", widgetSubId:["category":"entertainment", "utm_code":"123456"]);  // You can also use this way.
+            widget.loadWidget()
+            self.view.addSubview(widget)
        }
-       @IBAction func actionBackButton(sender: UIButton) {
-       }
+      
 
 }
 
