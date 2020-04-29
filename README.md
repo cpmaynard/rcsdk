@@ -1,6 +1,6 @@
-# Introdction:
+# Introduction:
 The Revcontent iOS SDK enables you to receive the same ad fill you would see in our traditional ad placements in a more flexible format.
-# Prerequesties
+# Prerequisites
 - XCode Version >= 10.x
 - iOS Version >=10.0
 # Features
@@ -9,9 +9,13 @@ The Revcontent iOS SDK enables you to receive the same ad fill you would see in 
 - Flexible widget size
 - Add widget programmatically or by creating IBOutlets from Storyboard/Xibs.
 # Installation
-- Download iOS Universable frameowrk `RCSDK.framework` from google.com
+- Download or Clone iOS Universal framework `RCSDK.framework`.
 - Drag & Drop `RCSDK.framework` in your iOS application project.
-- In Build phases make sure it is showing in `Embeded Frameworks` and `Copy Sign On Copy` is selected.
+- In Build phases make sure it is showing in `Embedded Frameworks` and `Copy Sign On Copy` is selected.
+
+# Example Project
+- You can also play with SDK in RCSDKExample project.
+
 # Usage
 ```
 import RCSDK
